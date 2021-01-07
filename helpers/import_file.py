@@ -4,4 +4,4 @@ def import_file(path):
 
     return file
   except:
-    print("Something went wrong - file not found")
+    exit("File not found - try other path")

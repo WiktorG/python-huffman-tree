@@ -1,7 +1,7 @@
-def import_file(path):
+def get_text_from_file(path):
   try: 
     file = open(path)
-
-    return file
+    lines = file.readlines()
+    return lines
   except:
     exit("File not found - try other path")

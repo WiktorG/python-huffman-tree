@@ -1,7 +1,6 @@
 
 from helpers.get_text_from_file import get_text_from_file
 from helpers.get_frequency_of_chars import get_frequency_of_chars
-from helpers.index_two_min_elements import index_two_min_elements
 from operator import attrgetter
 import json
 
@@ -31,7 +30,11 @@ for el in chars_frequency:
 
 class Tree:
   def index_two_min_nodes(self, node_arr):
-    return index_two_min_elements(node_arr)
+    sorted_array = sorted(array, key=lambda leaf: leaf.value)
+
+    i1, i2 = [array.index(sorted_array[0]), array.index(sorted_array[1])]
+
+    return [i1, i2]
 
   def build_tree(self, leaf_arr):
     tree_arr = leaf_arr

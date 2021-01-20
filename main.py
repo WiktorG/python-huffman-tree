@@ -30,9 +30,9 @@ for el in chars_frequency:
 
 class Tree:
   def index_two_min_nodes(self, node_arr):
-    sorted_array = sorted(array, key=lambda leaf: leaf.value)
+    sorted_array = sorted(node_arr, key=lambda leaf: leaf.value)
 
-    i1, i2 = [array.index(sorted_array[0]), array.index(sorted_array[1])]
+    i1, i2 = [node_arr.index(sorted_array[0]), node_arr.index(sorted_array[1])]
 
     return [i1, i2]
 

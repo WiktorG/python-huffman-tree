@@ -2,6 +2,10 @@
 
 Simple algorithm made for my college assignment. 
 
+## How to:
+
+To run algorith -> run main.py.
+
 ## Spec
 - Python 3.8.6 64-bit
 - System Mac OS

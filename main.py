@@ -15,6 +15,4 @@ tree = huffman.build_tree(leaf_arr)
 
 dictionary = tree.get_codes()
 
-print(chars_frequency)
-
 print("Generated codes for letters: ", dictionary)

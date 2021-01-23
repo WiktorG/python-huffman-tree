@@ -1,5 +1,3 @@
-import json
-
 class Leaf:
   def __init__(self, occurency_tuple):
     self.char = occurency_tuple[0]
@@ -25,14 +23,10 @@ class Node:
       self.right.__get_code(code + "0", codes_ref)
 
   def get_codes(self):
-    codes = {} # array that reference is passed to __get_code method
+    codes = {} # dictionary which reference is passed to __get_code method
     self.__get_code("", codes)
     return codes
     
-  def toJSON(self): # helper that allows to see whole Tree in JSON
-    return json.dumps(self, default=lambda o: o.__dict__, 
-      sort_keys=True, indent=4)
-
 class Huffman:
   def index_two_min_nodes(self, node_arr): # method that gets two minimum nodes from the tree
     sorted_array = sorted(node_arr, key=lambda leaf: leaf.value)
@@ -49,7 +43,7 @@ class Huffman:
       i1, i2 = self.index_two_min_nodes(tree_arr)
       new_node = Node(tree_arr[i1], tree_arr[i2])
 
-      tree_arr[i1] = new_node # insert node in place of smallest item
-      del tree_arr[i2] # remove second smallest item since it is already in the node
+      tree_arr[i2] = new_node # insert node in place of smallest item
+      del tree_arr[i1] # remove second smallest item since it is already in the node
 
     return tree_arr[0]
